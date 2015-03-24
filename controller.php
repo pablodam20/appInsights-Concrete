@@ -4,7 +4,7 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 
 class AppInsightsAddOnPackage extends Package {
 
-     protected $pkgHandle = 'app_insights';
+     protected $pkgHandle = 'app_insights_addon';
      protected $appVersionRequired = '5.6.0';
      protected $pkgVersion = '1.0';
 
@@ -19,7 +19,7 @@ class AppInsightsAddOnPackage extends Package {
      public function install() {
           $pkg = parent::install();
     
-          BlockType::installBlockTypeFromPackage('app_insights', $pkg);
+          BlockType::installBlockTypeFromPackage('app_insights_addon', $pkg);
      }
 }
 
