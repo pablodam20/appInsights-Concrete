@@ -29,14 +29,12 @@ class AppInsightsPackage extends Package{
 		BlockType::installBlockTypeFromPackage('appinsights', $pkg);
 	}
 	
-	//Functin for Backend and Frontend
-	$c; if ($c->isEditMode()) { 
-		//This function get a bollean value, True is you are in the backend
-		//if the function get false is because you are in the frontend
-		//This area is for code
+	//Determine if its on edit mode or not.
+	$c; if ($c->isEditMode()) {
+	   //edit mode is currently being displayed.
 	} 
 	else { 
-		//This area is for code
+		//Edit mode is not being shown.
 	}
     
 }
