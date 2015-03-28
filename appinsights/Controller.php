@@ -16,9 +16,9 @@ class AppInsightsPackage extends Package{
 	}
     
 	public function on_start() {
-	//$_instrumentationKey = 'Poner aca Instrumentation Key';
-	//$serverInstrumentation = new \packages\appinsights\src\Server_Instrumentation($_instrumentationKey);
-	//Events::extend('on_render_complete', 'Server_Instrumentation', 'endRequest', 'packages/' . $this->pkgHandle . '/src/Server_Instrumentation.php',array("Poner_aca_la_IK"));
+	$_instrumentationKey = 'Poner aca Instrumentation Key';
+	$serverInstrumentation = new \packages\appinsights\src\Server_Instrumentation($_instrumentationKey);
+	Events::extend('on_render_complete', 'Server_Instrumentation', 'endRequest', 'packages/' . $this->pkgHandle . '/src/Server_Instrumentation.php',array("Poner_aca_la_IK"));
 	}
 
 	
