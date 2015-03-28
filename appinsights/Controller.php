@@ -28,5 +28,13 @@ class AppInsightsPackage extends Package{
 		// install block		
 		BlockType::installBlockTypeFromPackage('appinsights', $pkg);
 	}
+	
+	//Determine if its on edit mode or not.
+	$c; if ($c->isEditMode()) {
+	   //edit mode is currently being displayed.
+	} 
+	else { 
+		//Edit mode is not being shown.
+	}
     
 }
