@@ -16,6 +16,20 @@ class Client_Instrumentation
     *
 	* @param       string  $_title  
     */
+	
+	    function getRequestName()
+    {
+            $page = Page::getCurrentPage();
+            if ($page->getCollectionID == HOME_CID)
+            {
+                return 'Home';
+            }
+            else
+            {
+              return $page->getCollectionName();   
+            }
+
+    }
    function addPrefix($_instrumentationkey) {
        $rawSnippet = '<script type="text/javascript">
             var appInsights=window.appInsights||function(config){
@@ -39,7 +53,7 @@ class Client_Instrumentation
         $replacements[0] = $_instrumentationkey;
         
         // Sets the page title
-        $replacements[1] = drupal_get_title();
+        $replacements[1] = getRequestName();
        
         // Validate if displaying home page
 		$p = Page::getCurrentPage();
